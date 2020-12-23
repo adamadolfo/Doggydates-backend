@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  breed: MyString
+  gender: MyString
+  gets_along_with: MyString
+  temperement: MyString
+  great_date: 1
+  dominate_submissive: MyString
+  leash: MyString
+  one_on_one_group: MyString
+  enjoys: MyString
+  dislikes: MyString
+  adopted_breeder: MyString
+  img_url: MyString
+  owner_id: 1
+
+two:
+  name: MyString
+  breed: MyString
+  gender: MyString
+  gets_along_with: MyString
+  temperement: MyString
+  great_date: 1
+  dominate_submissive: MyString
+  leash: MyString
+  one_on_one_group: MyString
+  enjoys: MyString
+  dislikes: MyString
+  adopted_breeder: MyString
+  img_url: MyString
+  owner_id: 1
