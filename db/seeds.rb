@@ -13,7 +13,7 @@ Owner.destroy_all
 
 adam = Owner.create(name: "Adam Adolfo", email: "adam_adolfo8@gmail.com", password_digest: "password", age: 24, age_preference: "any", friendship_type: "friends",
 owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://lh3.googleusercontent.com/proxy/VD21I2v09yvyLcACzyhRJo9Lkk_6AHQmL7w5TvhQysrrzbDsG4iQ-_S9dau7X3qJ5LaVB8P7L0p_aDa7KR9ewkhlEJSitizve8WI8KANNPAIQCPyjfO5bbz6ltfSsIQAycbdx7N6Xg")
+city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "http://darkroom-cdn.s3.amazonaws.com/2014/04/BUTTONBaseball2.jpg")
 
 Dog.create(name: "lucy", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
 temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",

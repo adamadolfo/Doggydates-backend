@@ -1,19 +1,19 @@
 class OwnersController < ApplicationController
     def index
         @owners = Owner.all
-        render json: @owners
+        render json: @owners.to_json(include: [:dogs] )
     end
 
     def show
         @owner = Owner.find(params[:id])
-        render json: @owner
+        render json: @owner.to_json(include: [:dogs] )
     end
 
     def create
         @owner = Owner.new()
         if @owner.save
             session[:owner_id] = @owner.id
-            render json: @owner
+            render json: @owner.to_json(include: [:dogs] )
         end
     end
 
@@ -22,7 +22,7 @@ class OwnersController < ApplicationController
         @owner = owner.find(params[:owner_id])
         if @owner
             @owner.update()
-            render json: @owner
+            render json: @owner.to_json(include: [:dogs] ) 
         end
     end
 end
