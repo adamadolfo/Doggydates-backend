@@ -10,11 +10,15 @@ class OwnersController < ApplicationController
     end
 
     def create
-        @owner = Owner.new()
-        if @owner.save
-            session[:owner_id] = @owner.id
-            render json: @owner.to_json(include: [:dogs] )
-        end
+        byebug
+            # @owner = Owner.new(
+            #     params.require(:owner).permit(:email, :password)
+            #     )
+            # if @owner.save
+            #     session[:owner_id] = @owner.id
+            #     render json: @owner.to_json(include: [:dogs] )
+
+            # end
     end
 
     def update 
