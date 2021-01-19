@@ -29,4 +29,10 @@ class OwnersController < ApplicationController
             render json: @owner.to_json(include: [:dogs] ) 
         end
     end
+
+    def feed
+       
+        @owner = Owner.find(params[:id])
+        render json: @owner.feed.to_json(include: [:dogs] ) 
+    end
 end
