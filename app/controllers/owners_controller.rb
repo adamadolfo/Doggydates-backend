@@ -23,10 +23,26 @@ class OwnersController < ApplicationController
 
     def update 
 
-        @owner = owner.find(params[:owner_id])
+        @owner = Owner.find(params[:id])
+     
         if @owner
-            @owner.update()
-            render json: @owner.to_json(include: [:dogs] ) 
+            @owner.update(
+                name: params[:name], 
+                age: params[:age], 
+                age_preference: params[:age_preference], 
+                friendship_type: params[:friendship_type],
+                owner_exp: params[:owner_exp], 
+                gender_preference: params[:gender_preference],
+                looking_for: params[:looking_for],
+                city: params[:city],
+                state: params[:state],
+                willing_mile_radius: params[:willing_mile_radius],
+                image_url: params[:image_url]
+
+            )
+            render json: @owner.to_json(include: [:dogs] )
+        else
+            render json: {status: "fail"}
         end
     end
 
