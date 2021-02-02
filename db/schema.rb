@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_185313) do
+ActiveRecord::Schema.define(version: 2021_02_02_173750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_185313) do
     t.string "breed"
     t.string "gender"
     t.string "gets_along_with"
-    t.string "temperement"
+    t.string "temperament"
     t.integer "great_date"
     t.string "dominate_submissive"
     t.string "leash"
