@@ -28,8 +28,32 @@ class DogsController < ApplicationController
         )
             
         if @dog.save
-            @owner = params[:owner_id].id
+            @owner = Owner.find(params[:owner_id])
             render json: @owner.to_json(include: [:dogs] )
         end
-end
+    end
+    def update 
+
+        @dog = Dog.find(params[:id])
+     
+        if @dog
+            @dog.update(
+                name: params[:name],
+                breed: params[:breed],
+                gender: params[:gender],
+                gets_along_with: params[:gets_along_with],
+                temperament: params[:temperament],
+                dominate_submissive: params[:dominate_submissive],
+                leash: params[:leash],
+                one_on_one_group: params[:one_on_one_group],
+                enjoys: params[:enjoys],
+                dislikes: params[:dislikes],
+                adopted_breeder: params[:adopted_breeder],
+                age: params[:age]
+
+            )
+            @owner = @dog.owner
+            render json: @owner.to_json(include: [:dogs] )
+        end
+    end
 end
