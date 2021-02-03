@@ -10,6 +10,12 @@ class Owner < ApplicationRecord
         return feed
     end
 
+    def remove_from_feed(user_id)
+        self.feed.reject { |user| user.id == user_id}
+        byebug
+        
+    end
+
 
 
 end
