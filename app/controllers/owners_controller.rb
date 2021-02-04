@@ -14,9 +14,9 @@ class OwnersController < ApplicationController
                 email: params[:email],
                 password: params[:password]
             )
-                
-            if @owner.save
+            if @owner.save!
                 session[:owner_id] = @owner.id
+                @owner.fill_feed
                 render json: @owner.to_json(include: [:dogs] )
             end
     end
@@ -46,14 +46,14 @@ class OwnersController < ApplicationController
         end
     end
 
+
     def feed
         @owner = Owner.find(params[:id])
-        render json: @owner.feed.to_json(include: [:dogs] ) 
+        render json: @owner.feed_members.to_json(include: [:dogs] ) 
     end
 
-    def remove
-        @owner = Owner.find(params[:id])
-        @owner.remove_from_feed(params[:liked])
-        render json: @owner.feed.to_json(include: [:dogs] )
-    end
+    # def remove
+    #     @owner = Owner.find(params[:id])
+    #     render json: @owner.remove_from_feed(params[:clicked]).to_json(include: [:dogs] )
+    # end
 end

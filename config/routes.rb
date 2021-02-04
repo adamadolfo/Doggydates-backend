@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :swipes
   resources :matches
   resources :owners
   resources :dogs
