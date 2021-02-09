@@ -52,8 +52,9 @@ class OwnersController < ApplicationController
         render json: @owner.feed_members.to_json(include: [:dogs] ) 
     end
 
-    # def remove
-    #     @owner = Owner.find(params[:id])
-    #     render json: @owner.remove_from_feed(params[:clicked]).to_json(include: [:dogs] )
-    # end
+    def remove
+        @owner = Owner.find(params[:id])
+        @owner.remove_from_feed(params[:clicked])
+        render json: @owner.feed_members.to_json(include: [:dogs] )
+    end
 end

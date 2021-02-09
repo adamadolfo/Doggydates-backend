@@ -18,24 +18,11 @@ class Owner < ApplicationRecord
         filtered = Owner.where.not(email: self.email).each { |owner| Swipe.create(swiping_owner_id: self.id, feed_member_id: owner.id) }
     end
 
+
   
-
-
-    ## create the feed of users to like or dislike.
-    ## this should never include the logged in user and in the future will make this 
-    ## only be users in the area instead of all owners like it currently is
-    # def feed
-    #     feed = Owner.where.not(email: self.email)
-    #     return feed
-    # end
-
-
-    # ## This is a temporary removal from feed. It should reset to the full feed. 
-    # ## To make this a permanent action I would need to make an owner have many owners in its feed and remove from that relationship.
-    # def remove_from_feed(user_id)
-    #    filtered = self.feed.where.not(id: user_id)
-    #    return filtered
-    # end
+    def remove_from_feed(user_id)
+        self.feed_connections.find_by(feed_member_id: user_id).delete
+    end
 
 
 
