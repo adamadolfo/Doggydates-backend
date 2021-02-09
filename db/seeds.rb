@@ -42,49 +42,49 @@ city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_
 
 
 Dog.create(name: "lucy", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/GM4o3n3.png", owner_id: adam.id, age: 8
 )
 
 Dog.create(name: "example1", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/Zqcbj9w.jpg", owner_id: example1.id, age: 8
 )
 
 Dog.create(name: "example2", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/2nBJvQx.jpg", owner_id: example2.id, age: 8
 )
 
 Dog.create(name: "example3", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/XBXd62X.jpg", owner_id: example3.id, age: 8
 )
 
 Dog.create(name: "example4", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/LbkfftN.jpg", owner_id: example4.id, age: 8
 )
 
 Dog.create(name: "example5", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/6ECoqWt.jpg", owner_id: example5.id, age: 8
 )
 
 Dog.create(name: "example6", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/5hy5j2D.jpg?1", owner_id: example6.id, age: 8
 )
 
 Dog.create(name: "example7", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperement: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
+temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
 leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/zaO6ePU.jpg", owner_id: example6.id, age: 8
 )
