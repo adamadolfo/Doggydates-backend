@@ -52,9 +52,24 @@ class OwnersController < ApplicationController
         render json: @owner.feed_members.to_json(include: [:dogs] ) 
     end
 
-    def remove
+    def swipe
         @owner = Owner.find(params[:id])
+        @clicked = Owner.find(params[:id])
+        @match = false
+        if params[:option] = "yes"
+            if @owner.liked_by?(@clicked)
+                @owner.accept_request_from(@clicked)
+                @match = true
+            else 
+                @owner.send_request_to(@clicked)
+            end
+        else
+            @owner.rejection(@clicked)
+            @match = false
+        end
         @owner.remove_from_feed(params[:clicked])
-        render json: @owner.feed_members.to_json(include: [:dogs] )
+        render json: { feed: @owner.feed_members.to_json(include: [:dogs] ),
+                        match: @match}
+        
     end
 end

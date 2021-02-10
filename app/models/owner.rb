@@ -51,6 +51,11 @@ class Owner < ApplicationRecord
     def accept_request_from(owner)
         self.receiving_invites.find_by(requestor_id: owner.id).accept
     end
+
+    def rejection(owner)
+        byebug
+        self.liked_by?(owner) ? self.receiving_invites.find_by(requestor_id: owner.id, friend_id: self.id).destroy : nil
+    end
     
 
 end
