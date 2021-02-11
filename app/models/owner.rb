@@ -53,9 +53,19 @@ class Owner < ApplicationRecord
     end
 
     def rejection(owner)
-        byebug
         self.liked_by?(owner) ? self.receiving_invites.find_by(requestor_id: owner.id, friend_id: self.id).destroy : nil
     end
     
+    def get_matches
+        friends_list = []
+        Match.all.where("friend_id = ? or requestor_id = ?", self.id, self.id).where({accepted: true}).each_with_index { |match, index| 
+            if match.requestor_id != self.id
+               friends_list << Owner.find(match.requestor_id)
+            else 
+                friends_list <<  Owner.find(match.friend_id)
+            end
+        }
+        friends_list
+    end
 
 end

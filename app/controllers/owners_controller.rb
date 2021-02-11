@@ -54,7 +54,7 @@ class OwnersController < ApplicationController
 
     def swipe
         @owner = Owner.find(params[:id])
-        @clicked = Owner.find(params[:id])
+        @clicked = Owner.find(params[:clicked])
         @match = false
         if params[:option] = "yes"
             if @owner.liked_by?(@clicked)
@@ -71,5 +71,10 @@ class OwnersController < ApplicationController
         render json: { feed: @owner.feed_members.to_json(include: [:dogs] ),
                         match: @match}
         
+    end
+
+    def accepted
+        @owner = Owner.find(params[:id])
+        render json: @owner.get_matches
     end
 end
