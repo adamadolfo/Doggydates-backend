@@ -3,6 +3,8 @@ class Owner < ApplicationRecord
     # has_many :matches
     # has_many :friends, :through => :matches
 
+    has_many :conversations
+
     has_many :requesting_invites, foreign_key: :requestor_id, class_name: "Match"
     has_many :friends, through: :requesting_invites
 
