@@ -3,7 +3,12 @@ class Owner < ApplicationRecord
     # has_many :matches
     # has_many :friends, :through => :matches
 
-    has_many :conversations
+    has_many :sentConversations, foreign_key: :sender_id, class_name: "Conversation"
+    has_many :contacts, through: :sentConversations
+
+    has_many :receivedConversations, foreign_key: :recipient_id, class_name: "Conversation"
+    has_many :inboxs, through: :receivedConversations
+ 
 
     has_many :requesting_invites, foreign_key: :requestor_id, class_name: "Match"
     has_many :friends, through: :requesting_invites
@@ -70,4 +75,7 @@ class Owner < ApplicationRecord
         friends_list
     end
 
+    def ownersConvos
+        Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id }))
+    end
 end
