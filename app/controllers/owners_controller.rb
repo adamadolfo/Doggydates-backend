@@ -79,7 +79,6 @@ class OwnersController < ApplicationController
     end
 
     def findConvos
-        byebug
         @owner = Owner.find(params[:id])
         @owner.ownersConvos
     end

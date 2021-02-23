@@ -4,10 +4,10 @@ class Owner < ApplicationRecord
     # has_many :friends, :through => :matches
 
     has_many :sentConversations, foreign_key: :sender_id, class_name: "Conversation"
-    has_many :contacts, through: :sentConversations
+    has_many :contacts, through: :sentConversations, :source => :recipient
 
     has_many :receivedConversations, foreign_key: :recipient_id, class_name: "Conversation"
-    has_many :inboxs, through: :receivedConversations
+    has_many :inboxes, through: :receivedConversations, :source => :sender
  
 
     has_many :requesting_invites, foreign_key: :requestor_id, class_name: "Match"
@@ -76,7 +76,10 @@ class Owner < ApplicationRecord
     end
 
     def ownersConvos
+        collectionOfPeople = self.contacts + self.inboxes
+        # Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id })).each{|convo| 
+     
         byebug
-        Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id }))
+
     end
 end
