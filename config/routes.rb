@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post 'feed', to: 'owners#feed'
   post 'swipe', to: 'owners#swipe'
   post 'accepted', to: 'owners#accepted'
+  post 'find-conversations', to: 'owners#findConvos'
 end

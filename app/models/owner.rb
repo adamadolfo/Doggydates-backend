@@ -76,6 +76,7 @@ class Owner < ApplicationRecord
     end
 
     def ownersConvos
+        byebug
         Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id }))
     end
 end

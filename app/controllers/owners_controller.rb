@@ -78,7 +78,9 @@ class OwnersController < ApplicationController
         render json: @owner.get_matches
     end
 
-    def findConvo
+    def findConvos
+        byebug
         @owner = Owner.find(params[:id])
+        @owner.ownersConvos
     end
 end
