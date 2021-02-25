@@ -80,6 +80,7 @@ class OwnersController < ApplicationController
 
     def findConvos
         @owner = Owner.find(params[:id])
-        @owner.ownersConvos
+        render json: @owner.ownersConvos
     end
+
 end

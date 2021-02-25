@@ -76,10 +76,28 @@ class Owner < ApplicationRecord
     end
 
     def ownersConvos
-        collectionOfPeople = self.contacts + self.inboxes
-        # Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id })).each{|convo| 
-     
-        byebug
+        conversationTracker = {}
 
+        collectionOfPeople = self.contacts + self.inboxes
+
+        collectionOfPeople.each { |person| 
+            conversationTracker[person.id] = [person]
+        }
+
+        conversations = Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id }))
+
+        conversations.each { |conversation| 
+            if conversation.sender_id != self.id
+                conversationTracker[conversation.sender_id] = conversationTracker[conversation.sender_id] << conversation.messages
+            else
+                conversationTracker[conversation.recipient_id] = conversationTracker[conversation.recipient_id] << conversation.messages
+            end 
+        }
+
+        conversationTracker
     end
+
+    # def getMessages
+    #     Conversation.where("sender_id = :id", { id: self.id }).or(Conversation.where("recipient_id = :id", { id: self.id })) 
+    # end
 end
