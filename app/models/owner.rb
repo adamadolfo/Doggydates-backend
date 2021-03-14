@@ -3,11 +3,11 @@ class Owner < ApplicationRecord
     # has_many :matches
     # has_many :friends, :through => :matches
 
-    has_many :sentConversations, foreign_key: :sender_id, class_name: "Conversation"
-    has_many :contacts, through: :sentConversations, :source => :recipient
+    has_many :sent_conversations, foreign_key: :sender_id, class_name: "Conversation"
+    has_many :contacts, through: :sent_conversations, :source => :recipient
 
-    has_many :receivedConversations, foreign_key: :recipient_id, class_name: "Conversation"
-    has_many :inboxes, through: :receivedConversations, :source => :sender
+    has_many :received_conversations, foreign_key: :recipient_id, class_name: "Conversation"
+    has_many :inboxes, through: :received_conversations, :source => :sender
  
 
     has_many :requesting_invites, foreign_key: :requestor_id, class_name: "Match"
@@ -93,7 +93,7 @@ class Owner < ApplicationRecord
                 conversationTracker[conversation.recipient_id] = conversationTracker[conversation.recipient_id] << conversation.messages
             end 
         }
-
+        
         conversationTracker
     end
 
