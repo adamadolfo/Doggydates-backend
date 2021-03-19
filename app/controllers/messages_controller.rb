@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+
+
     def create
         byebug
         Message.create()

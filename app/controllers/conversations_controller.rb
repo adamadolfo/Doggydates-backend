@@ -5,13 +5,13 @@ class ConversationsController < ApplicationController
     end
 
     def create
-        byebug
         if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-            @conversation = Conversation.between(params[:sender_id],
-            params[:recipient_id]).first
+            @conversation = Conversation.between(params[:sender_id], params[:recipient_id])
         else
            @conversation = Conversation.create!(conversation_params)
         end
+
+        render json: @conversation.to_json(include: [:messages] )
     end
 
 
