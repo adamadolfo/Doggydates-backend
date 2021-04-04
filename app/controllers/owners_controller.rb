@@ -12,7 +12,8 @@ class OwnersController < ApplicationController
     def create
             @owner = Owner.new(
                 email: params[:email],
-                password: params[:password]
+                password: params[:password],
+                image_url: "https://i.imgur.com/w7VVphI.jpg"
             )
             if @owner.save!
                 session[:owner_id] = @owner.id
