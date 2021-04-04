@@ -13,6 +13,8 @@ class OwnersController < ApplicationController
             @owner = Owner.new(
                 email: params[:email],
                 password: params[:password],
+                name: params[:name],
+                age: params[:age],
                 image_url: "https://i.imgur.com/w7VVphI.jpg"
             )
             if @owner.save!
