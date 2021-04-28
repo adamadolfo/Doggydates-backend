@@ -1,7 +1,5 @@
 class Owner < ApplicationRecord
     has_many :dogs
-    # has_many :matches
-    # has_many :friends, :through => :matches
 
     has_many :sent_conversations, foreign_key: :sender_id, class_name: "Conversation"
     has_many :contacts, through: :sent_conversations, :source => :recipient

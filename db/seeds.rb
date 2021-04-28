@@ -13,31 +13,19 @@ Owner.destroy_all
 
 adam = Owner.create(name: "Adam Adolfo", email: "adam_adolfo8@gmail.com", password_digest: "password", age: 24, age_preference: "any", friendship_type: "friends",
 owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "http://darkroom-cdn.s3.amazonaws.com/2014/04/BUTTONBaseball2.jpg")
+city: "Bel Air", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "http://darkroom-cdn.s3.amazonaws.com/2014/04/BUTTONBaseball2.jpg")
 
-example1 = Owner.create(name: "example1", email: "example1.com", password_digest: "example1", age: 24, age_preference: "any", friendship_type: "friends",
-owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://i.imgur.com/nbZfNbD.jpg")
+sam = Owner.create(name: "Sam", email: "sam@email.com", password_digest: "Sam", age: 30, age_preference: "any", friendship_type: "friends",
+owner_exp: "5 years", gender_preference: "any", looking_for: "Walking buddy.",
+city: "Forrest Hill", state: "Maryland", willing_mile_radius: "10 Miles", image_url: "https://i.imgur.com/nbZfNbD.jpg")
 
-example2 = Owner.create(name: "example2", email: "example2.com", password_digest: "example2", age: 24, age_preference: "any", friendship_type: "friends",
-owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
+charlie = Owner.create(name: "Charlie", email: "charlie@email.com", password_digest: "Charlie", age: 21, age_preference: "female", friendship_type: "friends",
+owner_exp: "a few months", gender_preference: "any", looking_for: "Dog-sit trading occasionally",
 city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://i.imgur.com/tE5zBNx.jpg")
 
-example3 = Owner.create(name: "example3", email: "example3.com", password_digest: "example3", age: 24, age_preference: "any", friendship_type: "friends",
-owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://i.imgur.com/HUpNF73.jpg")
-
-example4 = Owner.create(name: "example4", email: "example4.com", password_digest: "example4", age: 24, age_preference: "any", friendship_type: "friends",
-owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://i.imgur.com/80sr1d5.jpg")
-
-example5 = Owner.create(name: "example5", email: "example5.com", password_digest: "example5", age: 24, age_preference: "any", friendship_type: "friends",
-owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://i.imgur.com/O8yqa0A.jpg")
-
-example6 = Owner.create(name: "example6", email: "example6.com", password_digest: "example6", age: 24, age_preference: "any", friendship_type: "friends",
-owner_exp: "a few months", gender_preference: "any", looking_for: "person to walk on trails with",
-city: "Gaithersburg", state: "Maryland", willing_mile_radius: "25 Miles", image_url: "https://i.imgur.com/bWlbWIZ.jpg")
+ash = Owner.create(name: "Ash", email: "ash@mail.com", password_digest: "ash", age: 24, age_preference: "any", friendship_type: "friends",
+owner_exp: "a few months", gender_preference: "any", looking_for: "Runs with dogs.",
+city: "Bethesda", state: "Maryland", willing_mile_radius: "50 Miles", image_url: "https://i.imgur.com/HUpNF73.jpg")
 
 
 
@@ -47,44 +35,20 @@ leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, at
 adopted_breeder: "adopted", img_url: "https://i.imgur.com/GM4o3n3.png", owner_id: adam.id, age: 8
 )
 
-Dog.create(name: "example1", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/Zqcbj9w.jpg", owner_id: example1.id, age: 8
+Dog.create(name: "Bella", breed: "Unknown", gender: "female", gets_along_with: "both", 
+temperament: "Wild and fun", great_date: 0, dominate_submissive: "dominate",
+leash: "leashed", one_on_one_group: "one-on-one", enjoys: "Jumping", dislikes: "Bigger dogs",
+adopted_breeder: "breeder", img_url: "https://i.imgur.com/Zqcbj9w.jpg", owner_id: sam.id, age: 8
 )
 
-Dog.create(name: "example2", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/2nBJvQx.jpg", owner_id: example2.id, age: 8
+Dog.create(name: "Charles", breed: "Unknown", gender: "male", gets_along_with: "females", 
+temperament: "Well behaved in all scenarios", great_date: 0, dominate_submissive: "submissive",
+leash: "leashed", one_on_one_group: "both", enjoys: "Having proper posture.", dislikes: "Wild and misbehaved dogs.",
+adopted_breeder: "breeder", img_url: "https://i.imgur.com/2nBJvQx.jpg", owner_id: charlie.id, age: 8
 )
 
-Dog.create(name: "example3", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/XBXd62X.jpg", owner_id: example3.id, age: 8
-)
-
-Dog.create(name: "example4", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/LbkfftN.jpg", owner_id: example4.id, age: 8
-)
-
-Dog.create(name: "example5", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/6ECoqWt.jpg", owner_id: example5.id, age: 8
-)
-
-Dog.create(name: "example6", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/5hy5j2D.jpg?1", owner_id: example6.id, age: 8
-)
-
-Dog.create(name: "example7", breed: "Boxer/Husky", gender: "female", gets_along_with: "both", 
-temperament: "submissive until food or bones involved", great_date: 0, dominate_submissive: "dominate",
-leash: "leashed", one_on_one_group: "both", enjoys: "digging, walking, bones, attention, car rides", dislikes: "puppies, dogs touching her toys, bones, food",
-adopted_breeder: "adopted", img_url: "https://i.imgur.com/zaO6ePU.jpg", owner_id: example6.id, age: 8
+Dog.create(name: "Lela", breed: "Other", gender: "female", gets_along_with: "both", 
+temperament: "shy", great_date: 0, dominate_submissive: "submissive",
+leash: "leashed", one_on_one_group: "both", enjoys: "toys", dislikes: "noises",
+adopted_breeder: "adopted", img_url: "https://i.imgur.com/XBXd62X.jpg", owner_id: ash.id, age: 8
 )
